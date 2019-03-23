@@ -14,7 +14,7 @@ body {
   overflow: hidden;
   height: 100vh;
   display: flex;
-  padding: 10px 0;
+  padding: 10px;
 }
 
 h1 {
