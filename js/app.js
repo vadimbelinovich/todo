@@ -5,7 +5,7 @@ const input = document.querySelector(".input");
 const planed = document.querySelector(".planed");
 const done = document.querySelector(".done");
 
-function createEl() {
+function createEl(task) {
   let item = document.createElement("li");
 
   let checkbox = document.createElement("span");
@@ -14,6 +14,7 @@ function createEl() {
 
   let text = document.createElement("label");
   text.classList.add("text");
+  text.innerHTML = task;
 
   let input = document.createElement("input");
 
@@ -30,6 +31,8 @@ function createEl() {
   item.appendChild(input);
   item.appendChild(deleteIcon);
   item.appendChild(editIcon);
+
+  return item;
 }
 
-console.log(done);
+console.log(createEl(1234));
