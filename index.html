@@ -4,26 +4,49 @@
   <title>To-Do List App</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="Stylesheet" href="css/app.css">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
-    integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css?family=Bad+Script" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 </head>
 
 <body>
   <div class="wrapper">
     <div id="todo">
-      <h1> MY TO-DO LIST <i id="pencil" class="fas fa-pencil-alt"></i> </h1>
+      <h1>MY TO-DO LIST</h1>
 
-      <input type="text" placeholder="Add New task">
+      <input type="text" class='input' placeholder="Add New task">
+      <button class="add">Добавить</button>
 
-      <ul class="todos">
-        <li><span><i class="fas fa-trash-alt"></i></span>Go to the salon</li>
+      <h2 class='planed__title'>Требуется</h2>
+      <ul class="todos planed">
+        <!-- <li>
+          <span class="check"><i class="far fa-square"></i></span>
+          <label class="text">Go to the salon</label>
+          <input type="text">
+          <span class="delete"><i class="fas fa-trash"></i></span>
+          <span class="edit"><i class="fas fa-pen"></i></span>
+        </li> -->
+        <!-- <li>
+          <span class="check"><i class="fas fa-check-square"></i></span>
+          Go to the salon
+          <span class="delete"><i class="fas fa-trash"></i></span>
+          <span class="edit"><i class="fas fa-pen"></i></span>
+        </li>
+        <li>
+          <span class="check"><i class="far fa-square"></i></span>
+          Go to the salon
+          <span class="delete"><i class="fas fa-trash"></i></span>
+          <span class="edit"><i class="fas fa-save"></i></span>
+        </li> -->
       </ul>
 
-      <div id="buttons">
-        <button class="save">Save</button>
-        <button class="clear">Clear</button>
-      </div>
+      <h2 class='done__title'>Сделано</h2>
+      <ul class="todos done">
+        <!-- <li>
+          <span class="check"><i class="fas fa-check-square"></i></span>
+          Go to the salon
+          <span class="delete"><i class="fas fa-trash"></i></span>
+          <span class="edit"><i class="fas fa-pen"></i></span>
+        </li> -->
+      </ul>
     </div>
 
   </div>

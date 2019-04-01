@@ -6,7 +6,7 @@
 
 body {
   min-height: 100%;
-  font-family: Bad Script;
+  font-family: Arial;
   background: #5df1f1;
 }
 
@@ -28,30 +28,37 @@ h1 {
 
 input {
   background: white;
-  width: 100%;
+  width: 65%;
   box-sizing: border-box;
   height: 50px;
   font-size: 20px;
   padding-left: 25px;
-  border: 1px solid gray;
+  border-top: 2px solid gray;
+  border-bottom: 2px solid gray;
+  border-left: none;
+  border-right: 2px solid gray;
   color: gray;
+  margin-bottom: 20px;
 }
 
 input:focus {
   background: #edf1f5;
-  border: 3px solid #86a8e7;
+  border: 2px solid #86a8e7;
   outline: none;
   color: #86a8e7;
 }
 
 span {
-  margin-right: 10px;
   text-align: center;
   height: 100%;
-  width: 0;
-  opacity: 0;
   -webkit-transition: 0.3s;
   transition: 0.3s linear;
+  width: 30px;
+  float: right;
+}
+
+span.check {
+  float: left;
 }
 
 i {
@@ -69,7 +76,6 @@ button {
   display: inline-block;
   font-size: 15px;
   border-radius: 4px;
-  font-family: Bad Script;
   -webkit-transition-duration: 0.4s;
   /* Safari */
   transition-duration: 0.4s;
@@ -134,7 +140,7 @@ button:hover {
 
 .todos {
   list-style-type: none;
-  margin: 0;
+  margin: 0 0 20px;
   padding: 0;
 }
 
@@ -144,16 +150,11 @@ button:hover {
   cursor: pointer;
   font-size: 20px;
   min-height: 50px;
+  padding: 0 20px;
 }
 
 .todos li:nth-child(2n) {
   background: #edf1f5;
-}
-
-.todos li:hover span {
-  width: 50px;
-  opacity: 1.0;
-  margin-left: 5px;
 }
 
 .display {
@@ -181,6 +182,10 @@ button:hover {
   width: 100%;
   text-align: center;
   margin-top: 25px;
+}
+
+.todos.done {
+  opacity: .5;
 }
 
 /*  if screen size less than 450px, resize tips lists and close btn so they don't overlap */
