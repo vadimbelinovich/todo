@@ -30,8 +30,9 @@ function createEl(task) {
 function addTask() {
   if (input.value) {
     let item = createEl(input.value);
-    planed.append(item);
-    bindTask(item, finishTask);
+    planed.prepend(item);
+    bindTask(item);
+    localStorage.setItem("finished", planed.innerHTML);
     input.value = "";
   }
 }
@@ -42,32 +43,38 @@ function deleteTask() {
   let li = this.parentNode;
   let ul = li.parentNode;
   ul.removeChild(li);
+  localStorage.setItem("finished", planed.innerHTML);
 }
 
 function finishTask() {
   let li = this.parentNode;
   let checkbox = li.querySelector(".check");
   checkbox.innerHTML = "<i class='fas fa-check-square'></i>";
-
-  done.append(li);
-  bindTask(li, unfinishTask);
+  bindTask(li);
+  localStorage.setItem("finished", planed.innerHTML);
 }
 
-function unfinishTask() {
-  let li = this.parentNode;
-  let checkbox = li.querySelector(".check");
-  checkbox.innerHTML = "<i class='far fa-square'></i>";
-
-  planed.append(li);
-  bindTask(li, finishTask);
-}
-
-function bindTask(el, checkboxEvent) {
+function bindTask(el) {
   let checkEl = el.querySelector(".check");
   let deleteEl = el.querySelector(".delete");
 
-  checkEl.onclick = checkboxEvent;
+  checkEl.onclick = finishTask;
   deleteEl.onclick = deleteTask;
 }
 
-console.log(createEl(1234));
+function loadToDo() {
+  if (localStorage.getItem("finished")) {
+    planed.innerHTML = localStorage.getItem("finished");
+    let planedArr = Array.from(document.querySelectorAll("li"));
+    for (let i = 0; i < planedArr.length; i++) {
+      bindTask(planedArr[i]);
+    }
+  }
+}
+
+// let planedArr = Array.from(document.querySelector(".planed"));
+// let planedList = planedArr[0].childNodes;
+
+// console.log(planedList);
+
+loadToDo();
